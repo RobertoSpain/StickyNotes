@@ -1,0 +1,179 @@
+/* Reinicio de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+  background-color: #f4f4f9; 
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+h2 {
+  font-size: 28px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+
+/* Título y botones principales */
+.title {
+  display: flex;
+  justify-content: space-between;
+  max-width: 70vw;
+  margin: auto;
+  padding: 4% 2%;
+  align-items: center;
+}
+
+.btn {
+  padding: 1.5% 4%;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  color: #333;
+  background-color: #ffcc00;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffb300;
+  transform: scale(1.05);
+}
+
+/* Contenedor de notas */
+.notes-container {
+  max-width: 75vw;
+  margin: auto;
+  padding: 3% 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2%;
+}
+
+/* Estilo individual de las notas */
+.notes {
+  background: #ffffff;
+  width: 260px;
+  min-height: 280px;
+  font-size: 18px;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin: 2% 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.notes:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título de la nota */
+.note-title {
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  width: 100%;
+  background: transparent;
+}
+
+/* Estilo para el texto de la nota */
+.note-text {
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+}
+
+/* Botón de eliminar en las notas */
+.notes img {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  width: 18px;
+  transition: transform 0.2s ease;
+}
+
+.notes img:hover {
+  transform: scale(1.2);
+}
+
+/* Vista en lista */
+.notes-container.list-view {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Vista en tablero */
+.notes-container.board-view {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* Botón para alternar vistas */
+.toggle-view {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-view:hover {
+  background-color: #bbb;
+}
+
+/* Botones agrupados */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 600px) {
+  .title {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4% 2%;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .notes-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .notes {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .note-title,
+  .note-text {
+    font-size: 16px;
+  }
+
+  .toggle-view {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
